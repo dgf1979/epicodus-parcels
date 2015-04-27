@@ -30,7 +30,7 @@ describe('Parcel#shipping_size')
     expect(parcel1.shipping_size()).to(eq("medium"))
     #large
     parcel2 = Parcel.new(24, 24, 24, 20)
-    expect(parcel1.shipping_size()).to(eq("medium"))
+    expect(parcel1.shipping_size()).to(eq("large"))
   end
 
 end
