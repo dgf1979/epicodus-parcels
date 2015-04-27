@@ -19,5 +19,18 @@ get('/results') do
     @destination = ""
   end
   @total_shipping_cost = parcel.cost_to_ship(params.fetch('priority'), @destination)
+  @size = parcel.shipping_size().capitalize()
+
+  if params.fetch('priority') == "twoday"
+    @shipping_method = "Two Day"
+  else
+    @shipping_method = params.fetch('priority').capitalize()
+  end
+
+  if params.fetch('destination') == "on"
+    @destination = "International"
+  else
+    @destination = "Domestic"
+  end
   erb(:results)
 end
