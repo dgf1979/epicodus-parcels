@@ -36,6 +36,11 @@ describe('Parcel#cost_to_ship') do
     expect(parcel1.cost_to_ship("twoday")).to(eq(120.0))
   end
 
+  it('calculate cost of shipping internationally') do
+    parcel1 = Parcel.new(36, 4, 4, 40)
+    expect(parcel1.cost_to_ship("twoday", "international")).to(eq(240.0))
+  end
+
 end
 
 describe('Parcel#shipping_size') do
