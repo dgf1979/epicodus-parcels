@@ -6,6 +6,7 @@ class Parcel
     @width = width
     @height = height
     @weight = weight
+    @gift_wrap_cost = 0
   end
 
   #calc volume from dimensions
@@ -30,7 +31,7 @@ class Parcel
     if destination == "international"
       base_charge = base_charge * 2
     end
-    base_charge
+    base_charge + @gift_wrap_cost
   end
 
   define_method(:shipping_size) do
@@ -45,9 +46,12 @@ class Parcel
   end
 
   define_method(:gift_wrap) do |bool=false|
-    @length * @width * 2 +
-    @length * @height * 2 +
-    @width * @height * 2
+    if bool == true
+      @gift_wrap_cost = @length * @width * 2 +
+      @length * @height * 2 +
+      @width * @height * 2
+    end
+    @gift_wrap_cost = @gift_wrap_cost.*(0.1).round(2)
   end
 
 end

@@ -64,8 +64,8 @@ describe('Parcel#shipping_size') do
 end
 
 describe('Parcel#gift_wrap') do
-  it('given a parcel, calculate the surface area') do
+  it('given a parcel, calculate the cost given surface area') do
     parcel1 = Parcel.new(4, 4, 4, 20)
-    expect(parcel1.gift_wrap()).to(eq(96))
+    expect(parcel1.gift_wrap(true)).to(eq(9.6))
   end
 end
