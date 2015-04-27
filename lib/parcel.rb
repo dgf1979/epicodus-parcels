@@ -13,4 +13,8 @@ class Parcel
     return @length * @width * @height
   end
 
+  define_method(:cost_to_ship) do
+    @weight * 1.5
+  end
+
 end
