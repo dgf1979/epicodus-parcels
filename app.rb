@@ -10,7 +10,7 @@ end
 
 get('/results') do
   parcel = Parcel.new(params.fetch('length'), params.fetch('width'), params.fetch('height'), params.fetch('weight'))
-  if params.fetch('gift_wrap') == "on"
+  if params.has_key?('gift_wrap') == true
     parcel.gift_wrap(true)
   end
   @total_shipping_cost = parcel.cost_to_ship(params.fetch('priority'), params.fetch('destination'))
