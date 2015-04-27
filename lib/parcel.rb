@@ -17,4 +17,13 @@ class Parcel
     @weight * 1.5
   end
 
+  define_method(:shipping_size) do
+    if @length <= 6 && @width <= 6 && @height <= 6
+      return "small"
+    else
+      return "other than small"
+    end
+
+  end
+
 end

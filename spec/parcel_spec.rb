@@ -22,8 +22,15 @@ describe('Parcel#cost_to_ship') do
 
 describe('Parcel#shipping_size')
   it('calculate package size for use in shipping cost calculation') do
+    #small
     parcel1 = Parcel.new(4, 4, 4, 20)
     expect(parcel1.shipping_size()).to(eq("small"))
+    #medium
+    parcel2 = Parcel.new(8, 8, 8, 20)
+    expect(parcel1.shipping_size()).to(eq("medium"))
+    #large
+    parcel2 = Parcel.new(24, 24, 24, 20)
+    expect(parcel1.shipping_size()).to(eq("medium"))
   end
-  
+
 end
