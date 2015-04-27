@@ -31,7 +31,7 @@ class Parcel
     if destination == "international"
       base_charge = base_charge * 2
     end
-    base_charge + @gift_wrap_cost
+    base_charge += @gift_wrap_cost
   end
 
   define_method(:shipping_size) do

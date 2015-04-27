@@ -13,12 +13,17 @@ get('/results') do
   if params.has_key?('gift_wrap') == true
     parcel.gift_wrap(true)
   end
+
   if params.has_key?('destination')
     @destination = "international"
   else
-    @destination = ""
+    @destination = "domestic"
   end
-  @total_shipping_cost = parcel.cost_to_ship(params.fetch('priority'), @destination)
+
+  cost = (parcel.cost_to_ship(params.fetch('priority'), @destination))
+  @total_shipping_cost = '%.2f' % cost
+
+
   @size = parcel.shipping_size().capitalize()
 
   if params.fetch('priority') == "twoday"
@@ -27,10 +32,10 @@ get('/results') do
     @shipping_method = params.fetch('priority').capitalize()
   end
 
-  if params.fetch('destination') == "on"
-    @destination = "International"
-  else
-    @destination = "Domestic"
-  end
+  # if params.fetch('destination') == "on"
+  #   @destination = "International"
+  # else
+  #   @destination = "Domestic"
+  # end
   erb(:results)
 end
