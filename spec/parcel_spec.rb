@@ -21,7 +21,14 @@ describe('Parcel#cost_to_ship') do
     expect(parcel1.cost_to_ship()).to(eq(30))
   end
 
-describe('Parcel#shipping_size')
+  it('calculate cost of shipping given package size and weight') do
+    parcel1 = Parcel.new(36, 4, 4, 40)
+    expect(parcel1.cost_to_ship()).to(eq(80))
+  end
+
+end
+
+describe('Parcel#shipping_size') do
   it('calculate package size for use in shipping cost calculation') do
     #small
     parcel1 = Parcel.new(4, 4, 4, 20)
@@ -33,5 +40,4 @@ describe('Parcel#shipping_size')
     parcel3 = Parcel.new(24, 24, 24, 20)
     expect(parcel3.shipping_size()).to(eq("large"))
   end
-
 end
