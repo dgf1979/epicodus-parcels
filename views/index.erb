@@ -2,14 +2,16 @@
 <form action="/results">
   <div class="form-group">
     <label>Enter the dimensions and weight of your package:</label>
+    <br />
     Length
-    <input id="length" name="length" class="form-control" type="text">
+    <input id="length" name="length" class="form-control" type="number" min="1" max="120">
+    <!--<input type="number" name="quantity" min="1" max="5">-->
     Width
-    <input id="width" name="width" class="form-control" type="text">
+    <input id="width" name="width" class="form-control" type="number" min="1" max="120">
     Height
-    <input id="height" name="height" class="form-control" type="text">
+    <input id="height" name="height" class="form-control" type="number" min="1" max="120">
     Weight
-    <input id="weight" name="weight" class="form-control" type="text">
+    <input id="weight" name="weight" class="form-control" type="number" min="1" max="120">
     Do you want gift wrap (true/false)
     <input id="gift_wrap" name="gift_wrap" class="form-control" type="text">
     Is the destination domestic or international
