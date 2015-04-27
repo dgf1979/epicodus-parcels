@@ -13,6 +13,11 @@ get('/results') do
   if params.has_key?('gift_wrap') == true
     parcel.gift_wrap(true)
   end
-  @total_shipping_cost = parcel.cost_to_ship(params.fetch('priority'), params.fetch('destination'))
+  if params.has_key?('destination')
+    @destination = "international"
+  else
+    @destination = ""
+  end
+  @total_shipping_cost = parcel.cost_to_ship(params.fetch('priority'), @destination)
   erb(:results)
 end

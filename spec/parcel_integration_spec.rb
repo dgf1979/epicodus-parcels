@@ -30,7 +30,7 @@ describe('Parcel Integration Testing', {:type => :feature}) do
     fill_in('weight', :with => 20)
     check('gift_wrap')
     select('Overnight', :from => 'priority')
-    fill_in('destination', :with => 'international')
+    check('destination')
     click_button('Send')
     expect(page).to have_content('89.6')
   end

@@ -1,3 +1,9 @@
 .form-group input {
   width: auto;
+
+}
+
+.form-group input[type="checkbox"] {
+  display: inline;
+  height: auto;
 }
