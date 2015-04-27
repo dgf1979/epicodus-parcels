@@ -13,7 +13,7 @@ class Parcel
     return @length * @width * @height
   end
 
-  define_method(:cost_to_ship) do |priority = "", desination = ""|
+  define_method(:cost_to_ship) do |priority = "", destination = ""|
     base_charge = 0
     if self.shipping_size == "large"
       base_charge = @weight * 2.00
@@ -26,6 +26,9 @@ class Parcel
       base_charge = base_charge * 2
     elsif priority == "twoday"
       base_charge = base_charge * 1.5
+    end
+    if destination == "international"
+      base_charge = base_charge * 2
     end
     base_charge
   end
