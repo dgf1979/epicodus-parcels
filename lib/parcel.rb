@@ -45,6 +45,9 @@ class Parcel
   end
 
   define_method(:gift_wrap) do
+    @length * @width * 2 +
+    @length * @height * 2 +
+    @width * @height * 2
   end
-  
+
 end
