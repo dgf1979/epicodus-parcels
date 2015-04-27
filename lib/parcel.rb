@@ -14,13 +14,18 @@ class Parcel
   end
 
   define_method(:cost_to_ship) do |priority = ""|
+    base_charge = 0
     if self.shipping_size == "large"
-      return @weight * 2.00
+      base_charge = @weight * 2.00
     elsif self.shipping_size == "medium"
-      return @weight * 1.50
+      base_charge = @weight * 1.50
     else
-      return @weight * 1.00
+      base_charge = @weight * 1.00
     end
+    if priority == "overnight"
+      base_charge = base_charge * 2
+    end
+    base_charge
   end
 
   define_method(:shipping_size) do
