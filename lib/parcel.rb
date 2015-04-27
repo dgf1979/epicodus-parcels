@@ -24,6 +24,8 @@ class Parcel
     end
     if priority == "overnight"
       base_charge = base_charge * 2
+    elsif priority == "twoday"
+      base_charge = base_charge * 1.5
     end
     base_charge
   end
