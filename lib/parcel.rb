@@ -44,4 +44,7 @@ class Parcel
 
   end
 
+  define_method(:gift_wrap) do
+  end
+  
 end
