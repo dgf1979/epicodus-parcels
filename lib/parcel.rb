@@ -13,7 +13,7 @@ class Parcel
     return @length * @width * @height
   end
 
-  define_method(:cost_to_ship) do
+  define_method(:cost_to_ship) do |priority = ""|
     if self.shipping_size == "large"
       return @weight * 2.00
     elsif self.shipping_size == "medium"

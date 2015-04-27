@@ -26,6 +26,11 @@ describe('Parcel#cost_to_ship') do
     expect(parcel1.cost_to_ship()).to(eq(80.0))
   end
 
+  it('calculate cost of shipping OVERNIGHT priority') do
+    parcel1 = Parcel.new(36, 4, 4, 40)
+    expect(parcel1.cost_to_ship("overnight")).to(eq(160.0))
+  end
+
 end
 
 describe('Parcel#shipping_size') do
