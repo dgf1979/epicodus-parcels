@@ -41,6 +41,12 @@ describe('Parcel#cost_to_ship') do
     expect(parcel1.cost_to_ship("twoday", "international")).to(eq(240.0))
   end
 
+  it('calculate cost of shipping including the gift wrap option') do
+    gift = Parcel.new(4, 4, 4, 40)
+    gift.gift_wrap(true)
+    expect(gift.cost_to_ship()).to(eq(49.6))
+  end
+
 end
 
 describe('Parcel#shipping_size') do
