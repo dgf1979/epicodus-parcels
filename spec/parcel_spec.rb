@@ -18,12 +18,12 @@ end
 describe('Parcel#cost_to_ship') do
   it('calculate cost of shipping given weight times 1.5') do
     parcel1 = Parcel.new(4, 4, 4, 20)
-    expect(parcel1.cost_to_ship()).to(eq(30))
+    expect(parcel1.cost_to_ship()).to(eq(20.0))
   end
 
-  it('calculate cost of shipping given package size and weight') do
+  it('calculate cost of shipping LARGE package given package size and weight') do
     parcel1 = Parcel.new(36, 4, 4, 40)
-    expect(parcel1.cost_to_ship()).to(eq(80))
+    expect(parcel1.cost_to_ship()).to(eq(80.0))
   end
 
 end

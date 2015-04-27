@@ -14,13 +14,19 @@ class Parcel
   end
 
   define_method(:cost_to_ship) do
-    @weight * 1.5
+    if self.shipping_size == "large"
+      return @weight * 2.00
+    elsif self.shipping_size == "medium"
+      return @weight * 1.50
+    else
+      return @weight * 1.00
+    end
   end
 
   define_method(:shipping_size) do
-    if @length >= 24 && @width >= 24 && @height >= 24
+    if @length >= 24 || @width >= 24 || @height >= 24
       return "large"
-    elsif @length >= 8 && @width >= 8 && @height >= 8
+    elsif @length >= 8 || @width >= 8 || @height >= 8
       return "medium"
     else
       return "small"
