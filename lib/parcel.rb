@@ -18,7 +18,6 @@ class Parcel
   end
 
   define_method(:shipping_size) do
-    binding.pry
     if @length >= 24 && @width >= 24 && @height >= 24
       return "large"
     elsif @length >= 8 && @width >= 8 && @height >= 8

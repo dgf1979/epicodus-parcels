@@ -1,5 +1,6 @@
 require('rspec')
 require('parcel')
+require('pry')
 
 describe('Parcel#new') do
   it('verifies that correct object is returned') do
@@ -27,10 +28,10 @@ describe('Parcel#shipping_size')
     expect(parcel1.shipping_size()).to(eq("small"))
     #medium
     parcel2 = Parcel.new(8, 8, 8, 20)
-    expect(parcel1.shipping_size()).to(eq("medium"))
+    expect(parcel2.shipping_size()).to(eq("medium"))
     #large
-    parcel2 = Parcel.new(24, 24, 24, 20)
-    expect(parcel1.shipping_size()).to(eq("large"))
+    parcel3 = Parcel.new(24, 24, 24, 20)
+    expect(parcel3.shipping_size()).to(eq("large"))
   end
 
 end
