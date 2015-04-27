@@ -1,22 +1,24 @@
-## [APPNAME] ##
+## Parcel ##
 
 This application is meant to fulfill the requirements of an assignment through Epicodus code school. For more information on Epicodus, see <http://www.epicodus.com/>.
 
 ### Description ###
 
-[simple app description]
+calculates cost for imaginary parcel
 
-**Assignment:** [assignment title]
+**Assignment:** Parcels
 
 **<https://www.learnhowtoprogram.com/table-of-contents>**
 
 ### Author(s) ###
 
-Andrew Finstrom
+Andrew Finstrom & Jesse James
 
 ### Setup ###
 ```
-setup code or details here
+bundle
+
+ruby app.rb
 ```
 
 ### License ###
