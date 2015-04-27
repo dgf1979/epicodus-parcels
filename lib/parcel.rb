@@ -8,7 +8,9 @@ class Parcel
     @weight = weight
   end
 
-
-
+  #calc volume from dimensions
+  define_method(:volume) do
+    return @length * @width * @height
+  end
 
 end
