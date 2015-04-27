@@ -17,7 +17,12 @@
     Is the destination domestic or international
     <input id="destination" name="destination" class="form-control" type="text">
     Select special shipping method: (overnight or twoday)
-    <input id="priority" name="priority" class="form-control" type="text">
+    <!--<input id="priority" name="priority" class="form-control" type="text">-->
+    <select id="priority" name="priority" value="Standard">
+      <option name="standard" value="standard">Standard</option>
+      <option name="twoday" value="twoday">Two Day</option>
+      <option name="overnight" value="overnight">Overnight</option>
+    </select>
   </div>
   <button type="submit" class="btn-success">Send</button>
 </form>
